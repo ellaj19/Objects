@@ -1,13 +1,14 @@
 function happyAlpacas(N, X) {
+    let biggyalpaca = (N - X)
+    if(biggyalpaca % 2 !== 0) {
+        console.log(-1)
+    }
     let alpacaList = []
-    let happyIndex = 1
     for(let i = 0; i <= N; i++) {
-        alpacaList += 1
-        alpacaList.map((happyIndex) => happyIndex += 1)
-        if(N + X % 2 === 0) {
-            alpacaList.push(happyIndex)
-        } 
-
+        alpacaList.push(1);
+        current = 2
+        if(alpacaList[i] % 2 !== )
+        return(alpacaList)
         
     }
 }
