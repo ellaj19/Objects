@@ -1,4 +1,4 @@
-function happyAlpacas(N, X) {
+/* function happyAlpacas(N, X) {
     let biggyalpaca = (N - X)
     if(biggyalpaca % 2 !== 0) {
         console.log(-1)
@@ -27,3 +27,15 @@ function elder(n, start, duels) {
 }
 
 elder()
+ */
+function tarifa(x, n, firstmonths) {
+    for(let i = 0; i <= n; i++) {
+        let remainder = x - firstmonths[i]
+        let y = x + remainder
+        y + x
+        
+    }
+    return(y + x)
+}
+
+console.log(tarifa(10, 3, [4, 6, 2]))
