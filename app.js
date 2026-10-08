@@ -29,18 +29,35 @@ function elder(n, start, duels) {
     console.log(owner, owners);
  */
 
-
-
 function tarifa(x, n, firstmonths) {
-    let guh = x * (n + 1)
-    let cuh = 0
-    for(let i = 0; i < firstmonths.length; i++) {
-        cuh += firstmonths[i]
-    }
-    let final = guh - cuh
-    return(final)
+  let guh = x * (n + 1);
+  let cuh = 0;
+  for (let i = 0; i < firstmonths.length; i++) {
+    cuh += firstmonths[i];
+  }
+  let final = guh - cuh;
+  return final;
 }
 
+console.log(tarifa(15, 3, [15, 10, 20]));
 
+function ThunderCoaster(n, person) {
+  let canRide = 0;
+  for (let i = 0; i < n; i++) {
+    if (person[i][0] >= 120 && (person[i][1] >= 12 || person[i][2] === "y")) {
+      canRide += 1;
+    }
+  }
+  return canRide;
+}
 
-console.log(tarifa(10, 3, [4, 6, 2]))
+console.log(
+  ThunderCoaster(6, [
+    [130, 14, "n"],
+    [125, 9, "y"],
+    [125, 9, "n"],
+    [110, 15, "y"],
+    [120, 12, "n"],
+    [119, 13, "y"],
+  ]),
+);
