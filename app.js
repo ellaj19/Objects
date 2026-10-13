@@ -1,4 +1,4 @@
-/* 
+/* /* 
 function happyAlpacas(N, X) {
     let biggyalpaca = (N - X)
     if(biggyalpaca % 2 !== 0) {
@@ -29,7 +29,7 @@ function elder(n, start, duels) {
     console.log(owner, owners);
  */
 
-function tarifa(x, n, firstmonths) {
+/* function tarifa(x, n, firstmonths) {
   let guh = x * (n + 1);
   let cuh = 0;
   for (let i = 0; i < firstmonths.length; i++) {
@@ -61,3 +61,22 @@ console.log(
     [119, 13, "y"],
   ]),
 );
+ */
+function createStudent(name, grade, gpa) {
+  let student = [{ name: name, grade: grade, gpa: gpa }];
+  if (gpa >= 3.5) {
+    isHonors = true;
+  } else if (gpa < 3.5) {
+    isHonors = false;
+  }
+  return student.isHonors + ":" + isHonors;
+  return Object.entries(student);
+}
+console.log(createStudent("Alex", 11, 3.7));
+/* function filter(array, category) {
+
+}
+
+function addToCart(cart, items) {
+
+} */
