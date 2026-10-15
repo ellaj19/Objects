@@ -64,19 +64,17 @@ console.log(
  */
 function createStudent(name, grade, gpa) {
   let student = [{ name: name, grade: grade, gpa: gpa }];
+  let isHonors = false;
   if (gpa >= 3.5) {
     isHonors = true;
   } else if (gpa < 3.5) {
     isHonors = false;
   }
-  return student.isHonors + ":" + isHonors;
   return Object.entries(student);
 }
 console.log(createStudent("Alex", 11, 3.7));
-/* function filter(array, category) {
-
+function filter(array, category) {
+  let;
 }
 
-function addToCart(cart, items) {
-
-} */
+function addToCart(cart, items) {}
