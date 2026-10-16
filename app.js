@@ -74,7 +74,13 @@ function createStudent(name, grade, gpa) {
 }
 console.log(createStudent("Alex", 11, 3.7));
 function filter(array, category) {
-  let;
+  let array = [{name: "chocolate chip cookie", price: 5.99, description: "semi-sweet chocolate chips"}, 
+    {name: "funfetti cookie", price: description:}, 
+    {name: "red velvet cookie", price: description:}, 
+    {name: "sugar cookie", price: description:}, 
+    {name: "strawberry shortcake cookie", price: description:}, 
+    {name: "cheesecake cookie", price: description:}
+    {name: "",price: description:}]
 }
 
 function addToCart(cart, items) {}
