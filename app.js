@@ -62,7 +62,7 @@ console.log(
   ]),
 );
  */
-function createStudent(name, grade, gpa) {
+/* function createStudent(name, grade, gpa) {
   let student = [{ name: name, grade: grade, gpa: gpa }];
   let isHonors = false;
   if (gpa >= 3.5) {
@@ -70,17 +70,62 @@ function createStudent(name, grade, gpa) {
   } else if (gpa < 3.5) {
     isHonors = false;
   }
-  return Object.entries(student);
-}
-console.log(createStudent("Alex", 11, 3.7));
-function filter(array, category) {
-  let array = [{name: "chocolate chip cookie", price: 5.99, description: "semi-sweet chocolate chips"}, 
-    {name: "funfetti cookie", price: description:}, 
-    {name: "red velvet cookie", price: description:}, 
-    {name: "sugar cookie", price: description:}, 
-    {name: "strawberry shortcake cookie", price: description:}, 
-    {name: "cheesecake cookie", price: description:}
-    {name: "",price: description:}]
+  return Object.entries(student); */
+/* } */
+
+/* function filter(array, category) {
+  let array = [{name: "chocolate chip cookie", price: 4.99}, 
+    {name: "funfetti cookie", price: 4.99}, 
+    {name: "red velvet cookie", price: 5.99}, 
+    {name: "sugar cookie", price: 3.99}, 
+    {name: "strawberry shortcake cookie", price: 6.99}, 
+    {name: "cheesecake cookie", price: 6.99},
+    {name: "everything in the kitchen sink cookie", price: 6.99}
+    {name: "triple chocolate cookie", price: },
+    {name: "", price: },
+    {name: "", price: },
+    {name: "", price: },
+    {name: "", price: }]
+} */
+
+let array = [
+  { name: "chocolate chip cookie", price: 4.99 },
+  { name: "funfetti cookie", price: 4.99 },
+  { name: "red velvet cookie", price: 5.99 },
+  { name: "sugar cookie", price: 3.99 },
+  { name: "strawberry shortcake cookie", price: 6.99 },
+  { name: "cheesecake cookie", price: 6.99 },
+  { name: "everything in the kitchen sink cookie", price: 6.99 },
+  { name: "triple chocolate cookie", price: 5.99 },
+  /* {name: "", price: },
+    {name: "", price: },
+    {name: "", price: },
+    {name: "", price: } */
+];
+
+const cart = [];
+/* 
+function addToCart(cart, items) {} */
+
+function addtoCart(item) {
+  console.log(item.name);
+  if (cart[item.name]) {
+    cart.x.qty++;
+  } else {
+    cart[item.name] = item;
+    cart[item.name].qty = 1;
+  }
+  cart.push(qty);
 }
 
-function addToCart(cart, items) {}
+addtoCart({ name: "triple chocolate cookie", price: 5.99 });
+
+/* function addtocart(item) {
+  x = item.name
+  if (cart.x) {
+    console.log("inc qty");
+  } else {
+    cart.x = item;
+  }
+}
+ */
