@@ -97,10 +97,19 @@ let array = [
   { name: "cheesecake cookie", price: 6.99 },
   { name: "everything in the kitchen sink cookie", price: 6.99 },
   { name: "triple chocolate cookie", price: 5.99 },
-  /* {name: "", price: },
-    {name: "", price: },
-    {name: "", price: },
-    {name: "", price: } */
+  { name: "white chocolate matcha cookie", price: 5.99 },
+  { name: "suspicious cookie", price: 3.99 },
+  { name: "apple cider cookie", price: 4.99 },
+  { name: "black and white cookie", price: 4.99 },
+  { name: "butter cookies", price: 3.99 },
+  { name: "snickerdoodle cookie", price: 4.99 },
+  { name: "ugly macarons", price: 3.99 },
+  { name: "couture macarons", price: 7.99 },
+  { name: "spooky dirt cookie", price: 5.99 },
+  { name: "peppermint hot chocolate cookie", price: 5.99 },
+  { name: "vanilla cookie", price: 4.99 },
+  { name: "mia", price: 0.01 },
+  { name: "olivia", price: 0.01 },
 ];
 
 const cart = [];
@@ -108,17 +117,27 @@ const cart = [];
 function addToCart(cart, items) {} */
 
 function addtoCart(item) {
-  console.log(item.name);
   if (cart[item.name]) {
-    cart.x.qty++;
+    cart[item.name].qty++;
   } else {
     cart[item.name] = item;
     cart[item.name].qty = 1;
   }
-  cart.push(qty);
 }
 
-addtoCart({ name: "triple chocolate cookie", price: 5.99 });
+function removefromCart(item) {
+  if (cart[item.name]) {
+    cart[item.name].qty--;
+  } else {
+    cart[item.name] = item;
+    cart[item.name].qty = 0;
+  }
+}
+
+addtoCart({ name: "olivia", price: 0.01 });
+addtoCart({ name: "olivia", price: 0.01 });
+removefromCart({ name: "olivia", price: 0.01 });
+console.log(cart);
 
 /* function addtocart(item) {
   x = item.name
