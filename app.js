@@ -112,30 +112,40 @@ let array = [
   { name: "olivia", price: 0.01 },
 ];
 
-const cart = [];
+const cart = {};
 /* 
 function addToCart(cart, items) {} */
+
+let total = 0;
+
+let final = total.toFixed(2);
 
 function addtoCart(item) {
   if (cart[item.name]) {
     cart[item.name].qty++;
+    total += cart[item.name].price;
   } else {
     cart[item.name] = item;
     cart[item.name].qty = 1;
+    total += cart[item.name].price;
   }
 }
 
 function removefromCart(item) {
   if (cart[item.name]) {
     cart[item.name].qty--;
+    total -= cart[item.name].price;
   } else {
     cart[item.name] = item;
     cart[item.name].qty = 0;
+    total -= cart[item.name].price;
   }
 }
 
 addtoCart({ name: "olivia", price: 0.01 });
 addtoCart({ name: "olivia", price: 0.01 });
+addtoCart({ name: "mia", price: 0.01 });
+addtoCart({ name: "white chocolate matcha cookie", price: 5.99 });
 removefromCart({ name: "olivia", price: 0.01 });
 console.log(cart);
 
@@ -148,3 +158,15 @@ console.log(cart);
   }
 }
  */
+
+/* function total(cart) {
+  let total = 0;
+  for (let i = 0; i < cart.length; i++) {
+    total += cart[i.price];
+  }
+  return total;
+}
+
+console.log(total(cart)); */
+
+console.log(final);
