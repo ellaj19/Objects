@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(245, 189, 212);
+    background-color: rgb(189, 243, 245);
     
 }
 
@@ -11,22 +11,66 @@ body {
     padding: 0;
  }
 
+ .hero {
+      display: flex;
+      background-image: linear-gradient(rgba(83, 74, 57, 0.5), rgba(83, 74, 57, .5)),
+      url("ccc.jpg");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 100vh;
+      color: white; 
+   }
+
+   .hero-content {
+      width: 70rem;
+      padding: 20rem;
+      margin: 3rem auto;
+   }
+ 
+
+      .hero h1 {
+         font-size: 7rem;
+         margin-bottom: 2rem;
+         text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+         text-align: center;
+      }
+
+      .hero p {
+         font-size: 7;
+         margin-bottom: 2rem;
+         text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+         text-align: center;
+      }
+
+      .hero-btn {
+         display: inline-block;
+         padding: 1.4rem 3.2 rem;
+         font-size: 2rem;
+         margin-bottom: 2rem;
+         text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+         text-align: center;
+      }
+
+
  div{
     height: 55rem;
     width: 30rem;
     margin: 2.5rem 1rem;
     /* margin is space between elements */
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     /* padding is space inside of element */
     padding: 1rem;
  }
 
+ 
  .card{
-    background-color: rgb(165, 247, 247);
+    background-color: rgb(63, 55, 42);
     color: white;
     width: 30rem;
     height: 55rem;
-    border-radius: 0.8rem
+    border-radius: 0.8rem;
+    /* display: flex; */
  }
 
  .card-title {
