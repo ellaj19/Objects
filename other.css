@@ -1,0 +1,16 @@
+.box {
+    height: 30rem;
+    width: 25rem;
+    background-color: red;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
