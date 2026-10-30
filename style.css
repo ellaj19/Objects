@@ -67,7 +67,7 @@ body {
  }
 
  
- .card{
+ .box {
     display: flex;
     flex-direction: column;
     justify-content: space-around;  
@@ -80,13 +80,13 @@ body {
     align-items: center;
  }
 
- .card-title {
+ .box-title {
     font-size: 1.8rem;
     font-weight: 500;
     text-align: center;
  }
 
- .card-img {
+ .box-img {
    width: 100%;
    height: 50%;
    object-fit: cover;
@@ -94,12 +94,16 @@ body {
 
  }
 
- .card-btn {
+ .box-price {
+   margin: 0;
+ }
+
+ .box-btn {
    height: 4rem;
    padding: 0 1.6rem;
    background-color: turquoise;
    color: rgb(119, 87, 58);
-   border: 1px solid;
+   border: 1px solid rgb(99, 78, 68);
    border-radius: 0.4rem;
    font-size: 1.4rem;
    font-weight: 600px;
@@ -107,10 +111,16 @@ body {
    transition: all 0.3s;
  }
 
- .btn:hover {
+ .btn-hover {
    background-color: paleturquoise;
  }
 
+ .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
  /* ids are most specific, then class, then element */
  /* #test {
     background-color: papayawhip;
