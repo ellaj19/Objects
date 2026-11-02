@@ -1,7 +1,8 @@
 body {
-    background-color: rgb(189, 243, 245);
+    background-color: rgb(241, 231, 209);
     
 }
+
 
 
  html,body,*{
@@ -10,6 +11,8 @@ body {
     margin: 0;
     padding: 0;
  }
+
+
 
  .hero {
       display: flex;
@@ -47,8 +50,8 @@ body {
 
    .btn {
       display: inline-block;
-      padding: 1.4rem 3.2rem;
-      font-size: 6rem;
+/*       padding: 1.4rem 3.2rem; */
+      font-size: 2rem;
       text-decoration: none;
       border-radius: 5rem;
       color: white;
@@ -120,8 +123,12 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+
+   
 }
  /* ids are most specific, then class, then element */
  /* #test {
     background-color: papayawhip;
  } */
+
+
