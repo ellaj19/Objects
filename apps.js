@@ -1,4 +1,4 @@
-console.log("test");
+/* console.log("test");
 
 let x = document.querySelector(".box");
 x.style.backgroundColor = "rgb(255,255,0)";
@@ -9,7 +9,7 @@ document.getElementById("btn").addEventListener("click", function () {
   console.log("test");
   x++;
   header.textContent = `clocked ${x}`;
-});
+}); */
 
 function getRGB() {
   let r = Math.floor(Math.random() * 256);
@@ -20,14 +20,16 @@ function getRGB() {
   header.textContent = `rgb(${r}, ${g}, ${b})`;
 }
 
-function inject() {
+/* function inject() {
   const box = document.querySelector(".box");
   box.insertAdjacentHTML("afterbegin", `<h2 class="test">Inserted</h2>`);
 }
-
+ */
 const header = document.getElementById("color");
 let x = 0;
 document.getElementById("btn").addEventListener("click", function () {
+  console.log("clicked");
+  x++;
   getRGB();
 });
 
