@@ -10,7 +10,7 @@ document.getElementById("btn").addEventListener("click", function () {
   x++;
   header.textContent = `clocked ${x}`;
 }); */
-
+/* 
 function getRGB() {
   let r = Math.floor(Math.random() * 256);
   let g = Math.floor(Math.random() * 256);
@@ -18,19 +18,26 @@ function getRGB() {
   const box = document.querySelector(".box");
   box.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
   header.textContent = `rgb(${r}, ${g}, ${b})`;
-}
+} */
 
 /* function inject() {
   const box = document.querySelector(".box");
   box.insertAdjacentHTML("afterbegin", `<h2 class="test">Inserted</h2>`);
 }
  */
+
+function inject() {
+  let box = document.getElementById("box");
+  box.insertAdjacentHTML("afterbegin", `<div class="card"></div>`);
+}
+
 const header = document.getElementById("color");
 let x = 0;
 document.getElementById("btn").addEventListener("click", function () {
   console.log("clicked");
   x++;
-  getRGB();
+  /*   getRGB(); */
+  inject();
 });
 
 // select the container
