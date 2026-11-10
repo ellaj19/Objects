@@ -22,6 +22,18 @@ btn.addEventListener("click", function () {
   rgb();
 });
 
+function addtocart(item) {
+  const cart = document.querySelector(".cart");
+  cart.insertAdjacentHTML(
+    "beforeend",
+    `<div class="b">
+        <h2 class="card-header">${item.name}</h2>
+        <img src="${item.img}" alt="" />
+        <p>filler filler filler</p>
+      </div> `,
+  );
+}
+
 //make 1 html card, comment it out
 //select the container
 //forEach on items to inject to screen
