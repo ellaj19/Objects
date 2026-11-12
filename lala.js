@@ -1,19 +1,49 @@
-function inject(item) {
-  const container = document.querySelector(".container");
-  container.insertAdjacentHTML(
-    "beforeend",
-    `<div class="card">
-        <h2 class="card-header">${item.name}</h2>
-        <img src="${item.img}" alt="" />
-        <p>filler filler filler</p>
-      </div> `,
-  );
+function inject() {
+  for (let item of array) {
+    const container = document.querySelector(".container");
+    container.insertAdjacentHTML(
+      "beforeend",
+      `<div class="box">
+          <h2 class="box-title">${item.name}</h2>
+          <img class="box-img" src="images/${item.img}.jpg" alt="" />
+          <p>filler filler filler</p>
+        </div> `,
+    );
+  }
 }
+
+let array = [
+  { name: "chocolate chip cookie", price: 4.99, img: "ccc" },
+  { name: "funfetti cookie", price: 4.99, img: "funfetti" },
+  { name: "red velvet cookie", price: 5.99, img: "redvelvet" },
+  { name: "sugar cookie", price: 3.99, img: "sugar" },
+  { name: "strawberry shortcake cookie", price: 6.99, img: "strawberry" },
+  { name: "cheesecake cookie", price: 6.99, img: "cheesecake" },
+  { name: "everything in the kitchen sink cookie", price: 6.99, img: "ksc" },
+  { name: "triple chocolate cookie", price: 5.99, img: "tcc" },
+  { name: "white chocolate matcha cookie", price: 5.99, img: "matcha" },
+  { name: "suspicious cookie", price: 3.99, img: "suspicious" },
+  { name: "apple cider cookie", price: 4.99, img: "apple" },
+  { name: "black and white cookie", price: 4.99, img: "bnw" },
+  { name: "butter cookies", price: 3.99, img: "butter" },
+  { name: "snickerdoodle cookie", price: 4.99, img: "snickerdoodle" },
+  { name: "ugly macarons", price: 3.99, img: "macaroon" },
+  { name: "couture macarons", price: 7.99, img: "cutemacaron" },
+  { name: "spooky dirt cookie", price: 5.99, img: "dirt" },
+  { name: "peppermint hot chocolate cookie", price: 5.99, img: "cpc" },
+  { name: "vanilla cookie", price: 4.99, img: "vanilla" },
+  { name: "mia", price: 0.01, img: "ccc" },
+  { name: "olivia", price: 0.01, img: "ccc" },
+];
+
+const cart = {};
 
 const buttons = document.querySelectorAll("button");
 buttons.forEach((button) =>
-  button.addEventListener("click", function (event) {
-    console.log(event.target.closest(".card").getAttribute("data-item"));
+  button.addEventListener("click", function () {
+    console.log("clicked");
+    /*     console.log(event.target.closest(".card").getAttribute("data-item")); */
+    inject();
   }),
 );
 
@@ -25,12 +55,8 @@ btn.addEventListener("click", function () {
 function addtocart(item) {
   const cart = document.querySelector(".cart");
   cart.insertAdjacentHTML(
-    "beforeend",
-    `<div class="b">
-        <h2 class="card-header">${item.name}</h2>
-        <img src="${item.img}" alt="" />
-        <p>filler filler filler</p>
-      </div> `,
+    "afterbegin",
+    `<h2 class="box-title">${item.name}</h2>`,
   );
 }
 
