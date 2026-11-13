@@ -3,10 +3,11 @@ function inject() {
     const container = document.querySelector(".container");
     container.insertAdjacentHTML(
       "beforeend",
-      `<div class="box">
+      `<div class="box" data-item="${item.price}">
           <h2 class="box-title">${item.name}</h2>
           <img class="box-img" src="images/${item.img}.jpg" alt="" />
-          <p>filler filler filler</p>
+          <p>$${item.price}</p>
+          <button id="cookie">add to cart!</button>
         </div> `,
     );
   }
@@ -38,26 +39,34 @@ let array = [
 
 const cart = {};
 
-const buttons = document.querySelectorAll("button");
-buttons.forEach((button) =>
+const button = document.getElementById("shop");
+button.addEventListener("click", function () {
+  console.log("clicked");
+  /* console.log(event.target.closest(".card").getAttribute("data-item")); */
+  inject();
+});
+
+const cookies = document.getElementById("cookie");
+cookies.forEach((button) =>
   button.addEventListener("click", function () {
-    console.log("clicked");
-    /*     console.log(event.target.closest(".card").getAttribute("data-item")); */
-    inject();
+    console.log("click");
+    addtocart();
   }),
 );
 
-btn.addEventListener("click", function () {
+/* btn.addEventListener("click", function () {
   x++;
   rgb();
-});
+}); */
 
-function addtocart(item) {
-  const cart = document.querySelector(".cart");
-  cart.insertAdjacentHTML(
-    "afterbegin",
-    `<h2 class="box-title">${item.name}</h2>`,
-  );
+function addtocart() {
+  for (let item of array) {
+    const cart = document.querySelector(".cart");
+    cart.insertAdjacentHTML(
+      "afterbegin",
+      `<h2 class="box-title">${item.name}</h2>`,
+    );
+  }
 }
 
 //make 1 html card, comment it out
