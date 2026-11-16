@@ -7,10 +7,17 @@ function inject() {
           <h2 class="box-title">${item.name}</h2>
           <img class="box-img" src="images/${item.img}.jpg" alt="" />
           <p>$${item.price}</p>
-          <button id="cookie">add to cart!</button>
+          <button class="cookie">add to cart!</button>
         </div> `,
     );
   }
+  const cookies = document.querySelectorAll(".cookie");
+  cookies.forEach((button) =>
+    button.addEventListener("click", function () {
+      console.log("click");
+      addtocart();
+    }),
+  );
 }
 
 let array = [
@@ -46,27 +53,17 @@ button.addEventListener("click", function () {
   inject();
 });
 
-const cookies = document.getElementById("cookie");
-cookies.forEach((button) =>
-  button.addEventListener("click", function () {
-    console.log("click");
-    addtocart();
-  }),
-);
-
 /* btn.addEventListener("click", function () {
   x++;
   rgb();
 }); */
 
 function addtocart() {
-  for (let item of array) {
-    const cart = document.querySelector(".cart");
-    cart.insertAdjacentHTML(
-      "afterbegin",
-      `<h2 class="box-title">${item.name}</h2>`,
-    );
-  }
+  const carts = document.querySelector(".cart");
+  carts.insertAdjacentHTML(
+    "afterbegin",
+    `<h2 class="box-title">${item.name}</h2>`,
+  );
 }
 
 //make 1 html card, comment it out
