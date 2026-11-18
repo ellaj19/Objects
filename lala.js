@@ -16,8 +16,24 @@ function inject() {
     button.addEventListener("click", function (event) {
       let cookie = event.target.closest(".box").getAttribute("data-item");
       console.log(cookie);
+      addtoCart(cart.find((item) => item.name === cookie));
     }),
   );
+}
+
+function addtoCart(item) {
+  const carts = document.querySelector(".cart");
+  if (cart[item.name]) {
+    cart[item.name].qty++;
+    total += cart[item.name].price;
+    cart.append(item);
+  } else {
+    cart[item.name] = item;
+    cart[item.name].qty = 1;
+    total += cart[item.name].price;
+    cart.append(item);
+  }
+  carts.insertAdjacentHTML("afterbegin", `<div>${item.name}</div>`);
 }
 
 let array = [
@@ -113,14 +129,14 @@ button.addEventListener("click", function () {
   rgb();
 }); */
 
-function addtocart() {
+/* function addtocart(item) {
   const carts = document.querySelector(".cart");
   carts.insertAdjacentHTML(
     "afterbegin",
-    `<h2 class="box-title">${item.name}</h2>`,
+    `<div>${item.name}</div>`,
   );
 }
-
+ */
 //make 1 html card, comment it out
 //select the container
 //forEach on items to inject to screen
