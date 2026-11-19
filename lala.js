@@ -1,40 +1,4 @@
-function inject() {
-  for (let item of array) {
-    const container = document.querySelector(".container");
-    container.insertAdjacentHTML(
-      "beforeend",
-      `<div class="box" data-item="${item.id}">
-          <h2 class="box-title">${item.name}</h2>
-          <img class="box-img" src="images/${item.img}.jpg" alt="" />
-          <p>$${item.price}</p>
-          <button class="cookie">add to cart!</button>
-        </div> `,
-    );
-  }
-  const cookies = document.querySelectorAll(".cookie");
-  cookies.forEach((button) =>
-    button.addEventListener("click", function (event) {
-      let cookie = event.target.closest(".box").getAttribute("data-item");
-      console.log(cookie);
-      addtoCart(cart.find((item) => item.name === cookie));
-    }),
-  );
-}
-
-function addtoCart(item) {
-  const carts = document.querySelector(".cart");
-  if (cart[item.name]) {
-    cart[item.name].qty++;
-    total += cart[item.name].price;
-    cart.append(item);
-  } else {
-    cart[item.name] = item;
-    cart[item.name].qty = 1;
-    total += cart[item.name].price;
-    cart.append(item);
-  }
-  carts.insertAdjacentHTML("afterbegin", `<div>${item.name}</div>`);
-}
+const cart = {};
 
 let array = [
   {
@@ -110,12 +74,32 @@ let array = [
     img: "cpc",
     id: "peppermint",
   },
-  { name: "vanilla cookie", price: 4.99, img: "vanilla", id: "vanilla" },
   { name: "mia", price: 0.01, img: "ccc", id: "miar" },
   { name: "olivia", price: 0.01, img: "ccc", id: "oliviar" },
 ];
 
-const cart = {};
+function inject() {
+  for (let item of array) {
+    const container = document.querySelector(".container");
+    container.insertAdjacentHTML(
+      "beforeend",
+      `<div class="box" data-item="${item.id}">
+          <h2 class="box-title">${item.name}</h2>
+          <img class="box-img" src="images/${item.img}.jpg" alt="" />
+          <p>$${item.price}</p>
+          <button class="cookie">add to cart!</button>
+        </div> `,
+    );
+  }
+  const cookies = document.querySelectorAll(".cookie");
+  cookies.forEach((button) =>
+    button.addEventListener("click", function (event) {
+      let cookie = event.target.closest(".box").getAttribute("data-item");
+      console.log(cookie);
+      addtoCart(array.find((item) => item.id === cookie));
+    }),
+  );
+}
 
 const button = document.getElementById("shop");
 button.addEventListener("click", function () {
@@ -124,20 +108,16 @@ button.addEventListener("click", function () {
   inject();
 });
 
-/* btn.addEventListener("click", function () {
-  x++;
-  rgb();
-}); */
-
-/* function addtocart(item) {
-  const carts = document.querySelector(".cart");
-  carts.insertAdjacentHTML(
-    "afterbegin",
-    `<div>${item.name}</div>`,
-  );
+function addtoCart(item) {
+  let total = 0;
+  const shop = document.querySelector(".cart");
+  if (cart[item.name]) {
+    cart[item.name].qty++;
+    total += cart[item.name].price;
+  } else {
+    cart[item.name] = item;
+    cart[item.name].qty = 1;
+    total += cart[item.name].price;
+  }
+  shop.insertAdjacentHTML("beforeend", `<ol>${item.name}</ol>`);
 }
- */
-//make 1 html card, comment it out
-//select the container
-//forEach on items to inject to screen
-//select add cart buttons
