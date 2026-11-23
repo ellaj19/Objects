@@ -75,7 +75,7 @@ let array = [
     id: "peppermint",
   },
   { name: "mia", price: 0.01, img: "ccc", id: "miar" },
-  { name: "olivia", price: 0.01, img: "ccc", id: "oliviar" },
+  { name: "olivia", price: 0.01, img: "ccc", id: "oliviar", quantity: 7 },
 ];
 
 function inject() {
@@ -114,10 +114,16 @@ function addtoCart(item) {
   if (cart[item.name]) {
     cart[item.name].qty++;
     total += cart[item.name].price;
+    let quantity = document.(`<ol>quantity: ${item.qty}</ol>`);
+    quantity.remove();
   } else {
     cart[item.name] = item;
     cart[item.name].qty = 1;
     total += cart[item.name].price;
+    shop.insertAdjacentHTML(
+      "beforeend",
+      `<ol>${item.name}        ${item.price}</ol>`,
+    );
   }
-  shop.insertAdjacentHTML("beforeend", `<ol>${item.name}</ol>`);
+  shop.insertAdjacentHTML("beforeend", `<ol>quantity: ${item.qty}</ol>`);
 }
