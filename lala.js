@@ -86,7 +86,7 @@ function inject() {
       `<div class="box" data-item="${item.id}">
           <h2 class="box-title">${item.name}</h2>
           <img class="box-img" src="images/${item.img}.jpg" alt="" />
-          <p>$${item.price}</p>
+          <p id="price">$${item.price}</p>
           <button class="cookie">add to cart!</button>
         </div> `,
     );
@@ -111,19 +111,22 @@ button.addEventListener("click", function () {
 function addtoCart(item) {
   let total = 0;
   const shop = document.querySelector(".cart");
-  if (cart[item.name]) {
-    cart[item.name].qty++;
-    total += cart[item.name].price;
-    let quantity = document.(`<ol>quantity: ${item.qty}</ol>`);
+  if (cart[item.id]) {
+    cart[item.id].qty++;
+    total += cart[item.id].price;
+    let quantity = document.getElementById(`${item.id}qty`);
     quantity.remove();
   } else {
-    cart[item.name] = item;
-    cart[item.name].qty = 1;
-    total += cart[item.name].price;
+    cart[item.id] = item;
+    cart[item.id].qty = 1;
+    total += cart[item.id].price;
     shop.insertAdjacentHTML(
       "beforeend",
       `<ol>${item.name}        ${item.price}</ol>`,
     );
   }
-  shop.insertAdjacentHTML("beforeend", `<ol>quantity: ${item.qty}</ol>`);
+  shop.insertAdjacentHTML(
+    "beforeend",
+    `<ol id = "${item.id}qty">quantity: ${item.qty}</ol>`,
+  );
 }
